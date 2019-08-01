@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'nokogiri'
+gem 'open-ui'
+gem 'rack', '~> 2.0.1'
+gem 'rspec'
+gem 'pry', '~> 0.12.2'
