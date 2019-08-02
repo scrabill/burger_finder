@@ -1,6 +1,6 @@
-require "install/version"
+require "BurgerFinder/version"
 
-module Install
+module BurgerFinder
   class Error < StandardError; end
   # Your code goes here...
 end
