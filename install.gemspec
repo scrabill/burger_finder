@@ -1,10 +1,10 @@
 lib = File.expand_path("lib", __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "install/version"
+require "burger_finder/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "install"
-  spec.version       = Install::VERSION
+  spec.name          = "burger_finder"
+  spec.version       = BurgerFinder::VERSION
   spec.authors       = ["scrabill"]
   spec.email         = ["shannon.crabill@gmail.com"]
 
