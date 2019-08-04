@@ -1,4 +1,4 @@
-require "BurgerFinder/version"
+require "burger_finder/version"
 
 module BurgerFinder
   class Error < StandardError; end
