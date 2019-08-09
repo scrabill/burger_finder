@@ -8,7 +8,13 @@ class Restaurants
   # Div = lemon--div__373c0__1mboc border-color--default__373c0__2xHhl
   # LI = lemon--li__373c0__1r9wz border-color--default__373c0__2oFDT
 
-  doc = Nokogiri::HTML(open("https://foursquare.com/top-places/baltimore/best-places-burgers"))
+  # doc = Nokogiri::HTML(open("https://foursquare.com/top-places/baltimore/best-places-burgers"))
+  # doc = Nokogiri::HTML(open("../../fixtures/The 15 Best Places for Burgers in Baltimore.htm"))
+  #
+  # doc = Nokogiri::HTML(File.open("fixtures/test.htm"))
+
+  file = File.read('fixtures/test.htm')
+  doc = Nokogiri::HTML(file)
 
   @@all = {}
 
