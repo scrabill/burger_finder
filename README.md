@@ -30,7 +30,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To start the program run:
+
+```ruby
+ruby bin/start
+```
 
 ## Development
 
