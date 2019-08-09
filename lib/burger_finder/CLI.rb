@@ -13,8 +13,11 @@ def initialize(name = nil, see_burgers = nil, zip = nil)
   # puts "Hi #{@name}. Would you like to see a list of burger joints in Baltimore? y/n"
   # @see_burgers = gets.chomp
 
-  puts "Alright, #{@name}. Where do you want to search? Please enter a zip code."
-  @zip = gets.chomp
+  # puts "Alright, #{@name}. Where do you want to search? Please enter a zip code."
+  # @zip = gets.chomp
+  puts "Alright, #{@name}. Here are the burger restaurants available in your area."
+
+  list_burgers
 end
 
   # def initialize
@@ -49,6 +52,10 @@ end
     # else
     #   puts "ok, no burgs for you"
     # end
+  end
+
+  def list_burgers
+    puts "Good Burger - $$"
   end
 
   # binding.pry
