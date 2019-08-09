@@ -2,4 +2,4 @@
 
 require "./lib/burger_finder"
 
-CLI.new.call
+CLI.new
