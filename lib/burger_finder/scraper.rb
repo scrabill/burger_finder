@@ -9,19 +9,22 @@ class Scraper
   @@doc = Nokogiri::HTML(@@file)
 
 
-  def self.scrape_page
-    # doc = Nokogiri::File(open(""))
-    # file = File.read("fixtures/The 15 Best Places for Burgers in Baltimore.htm")
-    # doc = Nokogiri::HTML(file)
+  def self.scrape_main_page
 
+    venues = @@doc.css("div.venueInfo")
+    venues.each do |venue|
+      # puts venue.css("a.venueLink").text
 
+      name = venue.css("a.venueLink").text
+      rating = venue.css("span.venueScore span").text
+      neighborhood = venues.css("span.tipCount").text.split(" · ")[1]
+      website = venue.css("a.venueLink").attr("href").value
+      venue = Restaurants.new(name, rating, neighborhood, website)
+    end
 
-    doc.css("h2").first.text
-
+    venues
   end
-
-    binding.pry
-
+  
   def self.main_page
     Nokogiri::HTML(open("https://foursquare.com/explore?mode=url&near=90210&q=Burger"))
   end
