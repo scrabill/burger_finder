@@ -23,8 +23,7 @@ class Restaurants
   end
 
   def self.list_burgers
-    Scraper.scrape_main_page
-
+    
     Restaurants.all.each do |restaurant|
       puts restaurant.name
     end
@@ -33,6 +32,21 @@ class Restaurants
 
   def self.details(input)
     Scraper.scrape_detail_page(input)
+  end
+
+  def self.create_restaurant
+
+    Scraper.scrape_main_page.each do |venue|
+
+      name = venue.css("a.venueLink").text
+      rating = venue.css("span.venueScore span").text
+      neighborhood = venue.css("span.tipCount").text.split(" · ")[1]
+      website = venue.css("a.venueLink").attr("href").value
+      venue = Restaurants.new(name, rating, neighborhood, website)
+
+    end
+
+
   end
 
 end

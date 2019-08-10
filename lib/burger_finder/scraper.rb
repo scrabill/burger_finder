@@ -5,18 +5,8 @@ class Scraper
 
   def self.scrape_main_page
 
-    venues = @@doc.css("div.venueInfo")
-    venues.each do |venue|
+    @@doc.css("div.venueInfo")
 
-      name = venue.css("a.venueLink").text
-      rating = venue.css("span.venueScore span").text
-      neighborhood = venues.css("span.tipCount").text.split(" · ")[1]
-      website = venue.css("a.venueLink").attr("href").value
-      venue = Restaurants.new(name, rating, neighborhood, website)
-
-    end
-
-    venues
   end
 
   def self.scrape_detail_page(input)

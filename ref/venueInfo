@@ -22,3 +22,23 @@ pan>8.7</span></span></div>
   <span itemprop="addressLocality">Baltimore</span>, <span itemprop="addressRegion">MD</span> <span itemprop="postalCode">21231</span>
  <br>United States
 </div>
+
+
+# Resaurant Name: doc.css("p.venueName a").first.text
+
+# doc.css("p.venueName").each do |x|
+# array << x.text
+# end
+
+# y = array[0].text.split(". ")
+# ["1", "Abbey Burger Bistro"]
+# y.shift
+
+# Rating: doc.css("div.rating").first.text
+# Restaurant Page URL: doc.css("a.venueLink").first.attribute("href").value (needs fourquare.com added first)
+# On a given restaurant page, get the street address: doc.css("div.adr span").children.text
+# Phone:  doc.css("span.tel").text
+# Web URL: doc.css("a.url").attribute("href").value
+# Cost out of 4: doc.css("span.darken").text (will return $$ out of $$$$)
+# Neighborhood: tipCount
+# Meta: doc.css("div.meta.adjusted").first.text (category, Neighborhood and number of tips)

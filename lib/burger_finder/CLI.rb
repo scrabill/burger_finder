@@ -21,6 +21,7 @@ attr_accessor :name
       puts "Alright, #{@name}. Here are the burger restaurants available in your area."
       puts "\n"
 
+      Restaurants.create_restaurant
       Restaurants.list_burgers
       puts "\n"
 
