@@ -25,6 +25,29 @@ class Scraper
     venues
   end
 
+  def self.scrape_detail_page(input)
+    input -= 1
+    url = Restaurants.all[input].website
+    doc = Nokogiri::HTML(open(url))
+
+    # doc.css("h1").first
+
+    puts "#{Restaurants.all[input].name} - #{Restaurants.all[input].rating} - #{doc.css("span.darken").text}"
+    puts "\n"
+    # puts doc.css("span.darken").text
+    # puts "\n"
+    # puts doc.css("div.adr span").children.text
+    puts doc.css("div.adr span")[0].text
+    puts "#{doc.css("div.adr span")[1].text} #{doc.css("div.adr span")[2].text} #{doc.css("div.adr span")[3].text}"
+    # puts "#{doc.css("div.adr").children[3].text} #{doc.css("div.adr").children[4].text}"
+    # puts doc.css("div.adr").children[4].text
+    puts doc.css("span.tel").text
+    puts doc.css("a.url").attribute("href").value
+    puts "Popular Tip\n"
+    puts doc.css("div.tipText").first.text
+
+  end
+
   def self.main_page
     Nokogiri::HTML(open("https://foursquare.com/explore?mode=url&near=90210&q=Burger"))
   end

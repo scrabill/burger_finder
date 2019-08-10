@@ -58,6 +58,11 @@ attr_accessor :name, :rating, :neighborhood, :website
     @@all
   end
 
+  def self.details(input)
+    puts "Here are more details about restaurant #{}#{input}"
+
+  end
+
   # Resaurant Name: doc.css("p.venueName a").first.text
 
   # doc.css("p.venueName").each do |x|

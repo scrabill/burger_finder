@@ -18,6 +18,8 @@ def initialize(name = nil, see_burgers = nil, zip = nil)
   puts "Alright, #{@name}. Here are the burger restaurants available in your area."
 
   Restaurants.list_burgers
+
+  menu
 end
 
   # def initialize
@@ -54,6 +56,14 @@ end
     # end
   end
 
-  # binding.pry
+  def menu
+    puts "To learn more about a restaurant, enter it's number"
+
+    input = gets.chomp
+
+    puts "Restaurant ##{input}"
+    Restaurants.details(input)
+
+  end
 
 end
