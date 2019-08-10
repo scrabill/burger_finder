@@ -12,7 +12,7 @@ attr_accessor :name
   end
 
   def start
-    
+
     puts "Would you like to see a list of burger restuarants in your area? Enter Y or N to exit"
     input = gets.chomp
 
@@ -29,18 +29,18 @@ attr_accessor :name
 
       input = gets.chomp
 
-        if input != "N"
+        if input == "N"
+          puts "Ok, #{@name} maybe next time!"
+          puts "\n"
+        else
           input = input.to_i
           Restaurants.details(input)
           puts "\n"
           start
-        else
-          puts "Ok, maybe next time!"
-          puts "\n"
         end
 
     elsif input == "N"
-      puts "Ok, maybe next time!"
+      puts "Goodbye, #{@name}!"
       puts "\n"
     end
 
