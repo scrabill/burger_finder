@@ -3,7 +3,7 @@ require "nokogiri"
 
 class Restaurants
 
-attr_accessor :name, :rating, :cost, :neighborhood, :website
+attr_accessor :name, :rating, :neighborhood, :website
 
   # path = "https://www.yelp.com/search?cflt=burgers&find_loc=Downtown%2C+Baltimore%2C+MD"
 
@@ -23,9 +23,9 @@ attr_accessor :name, :rating, :cost, :neighborhood, :website
   def self.list_burgers
     # puts "Good Burger - $$"
     #
-    Restaurants.new("Good Burger", "8,7", "$$", "Brooklyn", "https://en.wikipedia.org/wiki/Good_Burger")
-    Restaurants.new("Burger Kind", "3.4", "$", "Ocean City", "https://en.wikipedia.org/wiki/Good_Burger")
-    Restaurants.new("Bobby's Burger Palace", "9,9", "$$$", "Baltmore", "https://en.wikipedia.org/wiki/Good_Burger")
+    # Restaurants.new("Good Burger", "8,7", "$$", "Brooklyn", "https://en.wikipedia.org/wiki/Good_Burger")
+    # Restaurants.new("Burger Kind", "3.4", "$", "Ocean City", "https://en.wikipedia.org/wiki/Good_Burger")
+    # Restaurants.new("Bobby's Burger Palace", "9,9", "$$$", "Baltmore", "https://en.wikipedia.org/wiki/Good_Burger")
 
 
     # puts "#{restaurant1.name} - #{restaurant1.rating} - #{restaurant1.cost} - #{restaurant1.neighborhood}"
@@ -34,17 +34,19 @@ attr_accessor :name, :rating, :cost, :neighborhood, :website
 
     # p restaurant1.name
 
-    @@all.uniq.each_with_index do |restaurant,i|
-      puts "#{i+1} -- #{restaurant.name} - #{restaurant.rating} - #{restaurant.cost} - #{restaurant.neighborhood}"
-    end
+    # @@all.uniq.each_with_index do |restaurant,i|
+    #   puts "#{i+1} -- #{restaurant.name} - #{restaurant.rating} - #{restaurant.cost} - #{restaurant.neighborhood}"
+    # end
+
+    Scraper.scrape_page
 
   end
 
-  def initialize(name, rating, cost, neighborhood, website)
+  def initialize(name = nil, rating = nil, neighborhood = nil, website = nil)
 
     @name = name
     @rating = rating
-    @cost = cost
+    # @cost = cost
     @neighborhood = neighborhood
     @website = website
     # self.name = "Good Burger"
