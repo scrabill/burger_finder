@@ -15,7 +15,7 @@ attr_accessor :name, :rating, :neighborhood, :website
   #
   # doc = Nokogiri::HTML(File.open("fixtures/test.htm"))
 
-  file = File.read('fixtures/test.htm')
+  file = File.read('fixtures/The 15 Best Places for Burgers in Baltimore.htm')
   doc = Nokogiri::HTML(file)
 
   @@all = []
