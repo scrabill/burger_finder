@@ -1,10 +1,7 @@
 class Restaurants
 
   attr_accessor :name, :rating, :neighborhood, :website
-
-  file = File.read('fixtures/The 15 Best Places for Burgers in Baltimore.htm')
-  doc = Nokogiri::HTML(file)
-
+  
   @@all = []
 
   def initialize(name = nil, rating = nil, neighborhood = nil, website = nil)
