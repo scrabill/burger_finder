@@ -1,7 +1,7 @@
 class Restaurants
 
   attr_accessor :name, :rating, :neighborhood, :website
-  
+
   @@all = []
 
   def initialize(name = nil, rating = nil, neighborhood = nil, website = nil)
@@ -10,8 +10,22 @@ class Restaurants
     @rating = rating
     @neighborhood = neighborhood
     @website = website
-
+    
     @@all << self
+
+  end
+
+  def self.create_restaurant
+
+    Scraper.scrape_main_page.each do |venue|
+
+      name = venue.css("a.venueLink").text
+      rating = venue.css("span.venueScore span").text
+      neighborhood = venue.css("span.tipCount").text.split(" · ")[1]
+      website = venue.css("a.venueLink").attr("href").value
+      venue = Restaurants.new(name, rating, neighborhood, website)
+
+    end
 
   end
 
@@ -51,19 +65,6 @@ class Restaurants
     puts doc.css("div.tipText").first.text
   end
 
-  def self.create_restaurant
 
-    Scraper.scrape_main_page.each do |venue|
-
-      name = venue.css("a.venueLink").text
-      rating = venue.css("span.venueScore span").text
-      neighborhood = venue.css("span.tipCount").text.split(" · ")[1]
-      website = venue.css("a.venueLink").attr("href").value
-      venue = Restaurants.new(name, rating, neighborhood, website)
-
-    end
-
-
-  end
 
 end
