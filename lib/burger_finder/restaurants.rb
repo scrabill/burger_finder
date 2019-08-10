@@ -21,24 +21,11 @@ attr_accessor :name, :rating, :neighborhood, :website
   @@all = []
 
   def self.list_burgers
-    # puts "Good Burger - $$"
-    #
-    # Restaurants.new("Good Burger", "8,7", "$$", "Brooklyn", "https://en.wikipedia.org/wiki/Good_Burger")
-    # Restaurants.new("Burger Kind", "3.4", "$", "Ocean City", "https://en.wikipedia.org/wiki/Good_Burger")
-    # Restaurants.new("Bobby's Burger Palace", "9,9", "$$$", "Baltmore", "https://en.wikipedia.org/wiki/Good_Burger")
-
-
-    # puts "#{restaurant1.name} - #{restaurant1.rating} - #{restaurant1.cost} - #{restaurant1.neighborhood}"
-    # puts "#{restaurant2.name} - #{restaurant2.rating} - #{restaurant2.cost} - #{restaurant2.neighborhood}"
-    # puts "#{restaurant3.name} - #{restaurant3.rating} - #{restaurant3.cost} - #{restaurant3.neighborhood}"
-
-    # p restaurant1.name
-
-    # @@all.uniq.each_with_index do |restaurant,i|
-    #   puts "#{i+1} -- #{restaurant.name} - #{restaurant.rating} - #{restaurant.cost} - #{restaurant.neighborhood}"
-    # end
-
     Scraper.scrape_main_page
+
+    Restaurants.all.each do |restaurant|
+      puts restaurant.name
+    end
 
   end
 
