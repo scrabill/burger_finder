@@ -6,7 +6,6 @@ attr_accessor :name
 
     puts "Hi! What's your name?"
     @name = gets.chomp
-    puts "Alright, #{@name}. Here are the burger restaurants available in your area."
 
     start
 
@@ -14,32 +13,36 @@ attr_accessor :name
 
   def start
 
+    # Show the list of all restaurants
+    # Ask which restaurant they would like more info on
+    # Display the details for that restaurant
+
+    puts "Alright, #{@name}. Here are the burger restaurants available in your area."
+    puts "\n"
+
     Restaurants.list_burgers
+    puts "\n"
 
     menu
 
   end
 
   def menu
-    
-    input = nil
-    while input == nil
 
-    puts "To learn more about a restaurant, enter it's number"
+    puts "To learn more about a restaurant, enter it's number or E to exit"
+    puts "\n"
 
     input = gets.chomp
 
-      if input.to_i > Restaurants.all.length
-        puts "I'm sorry, I did not understand your input"
-        # input = gets.chomp.to_i
-        menu
-      elsif input.to_i <= Restaurants.all.length
-        input = input.to_i
-        Restaurants.details(input)
-      else
-        puts "I'm sorry, I did not understand your input. Please enter a number between 1-15"
-      end
-
+    if input == "E"
+      puts "Goodbye"
+      puts "\n"
+      exit
+    else
+      input = input.to_i
+      puts input
+      Restaurants.details(input)
+      menu
     end
 
   end
