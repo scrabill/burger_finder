@@ -59,7 +59,7 @@ end
   def menu
     puts "To learn more about a restaurant, enter it's number"
 
-    input = gets.chomp
+    input = gets.chomp.to_i
 
     puts "Restaurant ##{input}"
     Restaurants.details(input)
