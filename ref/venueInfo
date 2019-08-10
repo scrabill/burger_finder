@@ -13,7 +13,6 @@ pan>8.7</span></span></div>
 
 <div class="adr" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
   <span itemprop="streetAddress">1702 Thames St</span> (Btw Broadway &amp; S Ann)<br>
-  <span itemprop="addressLocality">Baltimore</span>, <span itemprop="addressRegion">MD</span>
-  <span itemprop="postalCode">21231</span>
-  <br>United States
+  <span itemprop="addressLocality">Baltimore</span>, <span itemprop="addressRegion">MD</span> <span itemprop="postalCode">21231</span>
+ <br>United States
 </div>
