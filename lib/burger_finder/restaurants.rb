@@ -38,7 +38,7 @@ attr_accessor :name, :rating, :neighborhood, :website
     #   puts "#{i+1} -- #{restaurant.name} - #{restaurant.rating} - #{restaurant.cost} - #{restaurant.neighborhood}"
     # end
 
-    Scraper.scrape_page
+    Scraper.scrape_main_page
 
   end
 

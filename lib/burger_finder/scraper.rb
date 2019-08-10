@@ -24,7 +24,7 @@ class Scraper
 
     venues
   end
-  
+
   def self.main_page
     Nokogiri::HTML(open("https://foursquare.com/explore?mode=url&near=90210&q=Burger"))
   end
