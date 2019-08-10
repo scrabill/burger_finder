@@ -16,14 +16,23 @@ attr_accessor :name
     # Show the list of all restaurants
     # Ask which restaurant they would like more info on
     # Display the details for that restaurant
+    puts "Would you like to see a list of burger restuarants in your area? Enter Y or N to exit"
+    input = gets.chomp
 
-    puts "Alright, #{@name}. Here are the burger restaurants available in your area."
-    puts "\n"
+    if input == "Y"
 
-    Restaurants.list_burgers
-    puts "\n"
+      puts "Alright, #{@name}. Here are the burger restaurants available in your area."
+      puts "\n"
 
-    menu
+      Restaurants.list_burgers
+      puts "\n"
+
+      menu
+    elsif input == "N"
+      puts "Ok, maybe next time!"
+      puts "\n"
+    end
+
 
   end
 
@@ -35,14 +44,14 @@ attr_accessor :name
     input = gets.chomp
 
     if input == "E"
-      puts "Goodbye"
+      puts "Goodbye!"
       puts "\n"
       exit
     else
       input = input.to_i
-      puts input
       Restaurants.details(input)
-      menu
+      puts "\n"
+      start
     end
 
   end

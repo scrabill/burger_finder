@@ -61,7 +61,6 @@ attr_accessor :name, :rating, :neighborhood, :website
   def self.details(input)
     # puts "Here are more details about restaurant #{}#{input}"
     Scraper.scrape_detail_page(input)
-
   end
 
   # Resaurant Name: doc.css("p.venueName a").first.text
