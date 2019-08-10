@@ -7,15 +7,6 @@ class Restaurants
 
   @@all = []
 
-  def self.list_burgers
-    Scraper.scrape_main_page
-
-    Restaurants.all.each do |restaurant|
-      puts restaurant.name
-    end
-
-  end
-
   def initialize(name = nil, rating = nil, neighborhood = nil, website = nil)
 
     @name = name
@@ -31,8 +22,17 @@ class Restaurants
     @@all
   end
 
+  def self.list_burgers
+    Scraper.scrape_main_page
+
+    Restaurants.all.each do |restaurant|
+      puts restaurant.name
+    end
+
+  end
+
   def self.details(input)
     Scraper.scrape_detail_page(input)
   end
-  
+
 end
