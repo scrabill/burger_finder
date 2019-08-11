@@ -44,6 +44,8 @@ class Restaurants
 
   def self.details(input)
 
+    input -= 1
+    
     doc = Scraper.scrape_detail_page(input)
 
     puts "#{Restaurants.all[input].name} - #{Restaurants.all[input].rating}/10 - #{doc.css("span.darken").text}"

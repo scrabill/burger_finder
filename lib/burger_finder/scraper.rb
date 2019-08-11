@@ -10,7 +10,6 @@ class Scraper
   end
 
   def self.scrape_detail_page(input)
-    input -= 1
     url = Restaurants.all[input].website
     doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
   end
