@@ -34,7 +34,6 @@ class Restaurants
   end
 
   def self.list_burgers
-    Restaurants.create_restaurant
 
     Restaurants.all.each do |restaurant|
       puts restaurant.name
@@ -43,8 +42,6 @@ class Restaurants
   end
 
   def self.details(input)
-
-    puts "start details"
 
     doc = Scraper.scrape_detail_page(input)
 
@@ -67,9 +64,6 @@ class Restaurants
     puts "Popular Tip:"
     puts doc.css("div.tipText").first.text
 
-    puts "end details"
   end
-
-
 
 end
