@@ -38,6 +38,7 @@ class Restaurants
     Restaurants.all.each do |restaurant|
       puts restaurant.name
     end
+    puts "\n"
 
   end
 
@@ -63,6 +64,7 @@ class Restaurants
 
     puts "Popular Tip:"
     puts doc.css("div.tipText").first.text
+    puts "\n"
 
   end
 
