@@ -7,6 +7,8 @@ attr_accessor :name
     puts "Hi! What's your name?"
     @name = gets.chomp
 
+    Restaurants.create_restaurant
+
     start
 
   end
@@ -16,7 +18,7 @@ attr_accessor :name
     puts "Would you like to see a list of burger restuarants in your area? Enter Y or N to exit"
     puts "\n"
 
-    input = gets.chomp
+    input = gets.chomp.upcase
 
     case input
 
@@ -24,7 +26,6 @@ attr_accessor :name
         puts "Alright, #{@name}. Here is a list of burger restaurants nearby."
         puts "\n"
 
-        Restaurants.create_restaurant
         Restaurants.list_burgers
 
         puts "To learn more about a restaurant, enter it's number or N to exit"
@@ -37,8 +38,17 @@ attr_accessor :name
           puts "\n"
         else
           input = input.to_i
-          Restaurants.details(input)
-          puts "\n"
+
+          if input <= 15
+            Restaurants.details(input)
+            puts "\n"
+            start
+          else
+            puts "I'm sorry, I do not understand that command."
+            puts "\n"
+            start
+          end
+
         end
 
     when "N"
