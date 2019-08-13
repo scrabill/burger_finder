@@ -1,12 +1,20 @@
 # Burger Finder
 
-🍔 A CLI Ruby gem to help you find the best burger joints in your area 🍔
+A CLI application to help you find the best burger joints in the Baltimore area. Yum!
 
-## Install
+🍔🍔🍔🍔🍔
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/burger_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
+## About
+
+I like burgers. And I like to know where the best ones are in my area at all times. So, I build an application to do that.
+
+My blog post [CLI Have No Idea What I’m Doing: Planning (and Building) My First CLI Application](https://shannoncrabill.com/blog/cli-application-planning/) goes into detail on the steps I took to make this happen.
+
+***
 
 ## Installation
+
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/burger_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 Add this line to your application's Gemfile:
 
@@ -45,6 +53,13 @@ To install this gem onto your local machine, run `bundle exec rake burger_finder
 ## Contributing
 
 Bug reports are welcome on GitHub at https://github.com/scrabill/burger_finder. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## To Do
+
+- Implement an API for restaurant data
+- Display data based on user input for location (city or zip code)
+- Better logic for edge cases (invalid input, etc)
+- Error handling
 
 ## License
 
