@@ -1,4 +1,4 @@
-class Scraper
+class BurgerFinder::Scraper
 
   @@file = File.read("fixtures/The 15 Best Places for Burgers in Baltimore.htm")
   @@doc = Nokogiri::HTML(@@file)
@@ -10,7 +10,7 @@ class Scraper
   end
 
   def self.scrape_detail_page(input)
-    url = Restaurants.all[input].website
+    url = BurgerFinder::Restaurants.all[input].website
     doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
   end
 

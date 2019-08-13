@@ -1,4 +1,4 @@
-class Restaurants
+class BurgerFinder::Restaurants
 
   attr_accessor :name, :rating, :neighborhood, :website
 
@@ -17,13 +17,13 @@ class Restaurants
 
   def self.create_restaurant
 
-    Scraper.scrape_main_page.each do |venue|
+    BurgerFinder::Scraper.scrape_main_page.each do |venue|
 
       name = venue.css("a.venueLink").text
       rating = venue.css("span.venueScore span").text
       neighborhood = venue.css("span.tipCount").text.split(" · ")[1]
       website = venue.css("a.venueLink").attr("href").value
-      venue = Restaurants.new(name, rating, neighborhood, website)
+      venue = BurgerFinder::Restaurants.new(name, rating, neighborhood, website)
 
     end
 
@@ -35,7 +35,7 @@ class Restaurants
 
   def self.list_burgers
 
-    Restaurants.all.each do |restaurant|
+    BurgerFinder::Restaurants.all.each do |restaurant|
       puts restaurant.name
     end
     puts "\n"
@@ -45,10 +45,10 @@ class Restaurants
   def self.details(input)
 
     input -= 1
-    
-    doc = Scraper.scrape_detail_page(input)
 
-    puts "#{Restaurants.all[input].name} - #{Restaurants.all[input].rating}/10 - #{doc.css("span.darken").text}"
+    doc = BurgerFinder::Scraper.scrape_detail_page(input)
+
+    puts "#{BurgerFinder::Restaurants.all[input].name} - #{BurgerFinder::Restaurants.all[input].rating}/10 - #{doc.css("span.darken").text}"
     puts "\n"
 
     puts "Address:"

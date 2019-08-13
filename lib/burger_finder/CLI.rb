@@ -1,4 +1,4 @@
-class CLI
+class BurgerFinder::CLI
 
 attr_accessor :name
 
@@ -7,7 +7,7 @@ attr_accessor :name
     puts "Hi! What's your name?"
     @name = gets.chomp
 
-    Restaurants.create_restaurant
+    BurgerFinder::Restaurants.create_restaurant
 
     start
 
@@ -26,7 +26,7 @@ attr_accessor :name
         puts "Alright, #{@name}. Here is a list of burger restaurants nearby."
         puts "\n"
 
-        Restaurants.list_burgers
+        BurgerFinder::Restaurants.list_burgers
 
         puts "To learn more about a restaurant, enter it's number or N to exit"
         puts "\n"
@@ -40,7 +40,7 @@ attr_accessor :name
           input = input.to_i
 
           if input <= 15
-            Restaurants.details(input)
+            BurgerFinder::Restaurants.details(input)
             puts "\n"
             start
           else
