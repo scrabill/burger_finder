@@ -58,7 +58,7 @@ Bug reports are welcome on GitHub at https://github.com/scrabill/burger_finder. 
 
 - Implement an API for restaurant data
 - Display data based on user input for location (city or zip code)
-- Better logic for edge cases (invalid input, etc)
+- ~Better logic for edge cases (invalid input, etc)~
 - Error handling
 
 ## License
