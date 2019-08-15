@@ -65,8 +65,12 @@ class BurgerFinder::Restaurants
     puts doc.css("a.url").attribute("href").value
     puts "\n"
 
-    puts "Popular Tip:"
-    puts doc.css("div.tipText").first.text
+    puts "Popular Tips:"
+    puts doc.css("div.tipText")[0].text
+    puts "\n"
+    puts doc.css("div.tipText")[1].text
+    puts "\n"
+    puts doc.css("div.tipText")[2].text
     puts "\n"
 
   end
