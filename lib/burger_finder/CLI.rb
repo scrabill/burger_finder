@@ -5,7 +5,10 @@ attr_accessor :name
   def initialize(name = nil)
 
     puts "Hi! What's your name?"
+    puts "\n"
+
     @name = gets.chomp
+    puts "\n"
 
     BurgerFinder::Restaurants.create_restaurant
 
@@ -23,6 +26,7 @@ attr_accessor :name
     case input
 
     when "Y"
+        puts "\n"
         puts "Alright, #{@name}. Here is a list of burger restaurants nearby."
         puts "\n"
 
@@ -32,6 +36,7 @@ attr_accessor :name
         puts "\n"
 
         input = gets.chomp
+        puts "\n"
 
         if input == "N"
           puts "Ok, #{@name} maybe next time!"
@@ -52,9 +57,11 @@ attr_accessor :name
         end
 
     when "N"
+        puts "\n"
         puts "Ok, #{@name} maybe next time!"
         puts "\n"
     else
+      puts "\n"
       puts "I'm sorry, I do not understand that command."
       puts "\n"
       start
