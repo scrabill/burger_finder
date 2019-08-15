@@ -17,9 +17,9 @@ class BurgerFinder::Restaurants
 
   def self.create_restaurant
 
-    BurgerFinder::Scraper.scrape_main_page.each do |venue|
+    BurgerFinder::Scraper.scrape_main_page.each_with_index do |venue, index|
 
-      name = venue.css("a.venueLink").text
+      name = venue.css("a.venueLink").children[1].text.gsub("\u00A0","")
       rating = venue.css("span.venueScore span").text
       neighborhood = venue.css("span.tipCount").text.split(" · ")[1]
       website = venue.css("a.venueLink").attr("href").value
@@ -35,9 +35,10 @@ class BurgerFinder::Restaurants
 
   def self.list_burgers
 
-    BurgerFinder::Restaurants.all.each do |restaurant|
-      puts restaurant.name
+    BurgerFinder::Restaurants.all.each_with_index do |restaurant, index|
+      puts "#{index + 1}. #{restaurant.name}"
     end
+
     puts "\n"
 
   end
@@ -48,7 +49,7 @@ class BurgerFinder::Restaurants
 
     doc = BurgerFinder::Scraper.scrape_detail_page(input)
 
-    puts "#{BurgerFinder::Restaurants.all[input].name} - #{BurgerFinder::Restaurants.all[input].rating}/10 - #{doc.css("span.darken").text}"
+    puts "#{input + 1}. #{BurgerFinder::Restaurants.all[input].name} - #{BurgerFinder::Restaurants.all[input].rating}/10 - #{doc.css("span.darken").text}"
     puts "\n"
 
     puts "Address:"
