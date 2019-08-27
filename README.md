@@ -62,6 +62,8 @@ Bug reports are welcome on GitHub at https://github.com/scrabill/burger_finder. 
 - Error handling
 - Save restaurant details into object after first call
 - Update user agent and URL for initial scrap
+- [Colorize](https://github.com/fazibear/colorize)
+- Add emojis
 
 ## License
 
