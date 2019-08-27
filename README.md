@@ -61,6 +61,7 @@ Bug reports are welcome on GitHub at https://github.com/scrabill/burger_finder. 
 - ~Better logic for edge cases (invalid input, etc)~
 - Error handling
 - Save restaurant details into object after first call
+- Update user agent and URL for initial scrap
 
 ## License
 
