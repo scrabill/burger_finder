@@ -1,64 +1,47 @@
 # Burger Finder
 
-A CLI application to help you find the best burger joints in the Baltimore area. Yum!
+A CLI application built with Ruby to help you find the best burger joints in the Baltimore area. Yum!
 
 🍔🍔🍔🍔🍔
 
 ## About
 
-I like burgers. And I like to know where the best ones are in my area at all times. So, I build an application to do that.
+I like burgers. And I like to know where the best ones are in my area at all times. So, I build a Ruby application to do that.
+
+The Ruby objects for each restaurant are scraped using Nokigiri from the webpage [The 15 Best Places for Burgers in Baltimore](https://foursquare.com/top-places/baltimore/best-places-burgers). Details on a specific restaurant is displayed based on a selection from the user.
 
 My blog post [CLI Have No Idea What I’m Doing: Planning (and Building) My First CLI Application](https://shannoncrabill.com/blog/cli-application-planning/) goes into detail on the steps I took to make this happen.
 
+A static version of the webpage is included in the `fixture` file to prevent any time out or repeated request errors.
+
 ***
-
-## Installation
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/burger_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'burger_finder'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install burger_finder
 
 ## Usage
 
-To start the program run:
+- `git clone https://github.com/scrabill/burger_finder.git`
+- `cd burger_finder`
+- `ruby bin/start` or `./bin/start` will start the program
+- The CLI will ask you for you name and present a list of 15 burger joints in the Batimore area.
 
-```ruby
-ruby bin/start
-```
+![alt](assets/start.png)
 
-Or
+- Entering the number next to a restaurants name will show more details about that restaurant, including address, phone number, website and popular tips
 
-```ruby
-./bin/start
-```
+![alt](assets/details.png)
 
-## Development
+- Entering "N" will exit the program. 
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake burger_finder`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+![alt](assets/exit.png)
 
 ## Contributing
 
 Bug reports are welcome on GitHub at https://github.com/scrabill/burger_finder. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
-## To Do
+## Future Enhancements
 
 - Implement an API for restaurant data
 - Display data based on user input for location (city or zip code)
-- ~Better logic for edge cases (invalid input, etc)~
+- ~~Better logic for edge cases (invalid input, etc)~~
 - Error handling
 - Save restaurant details into object after first call
 - Update user agent and URL for initial scrap
@@ -67,7 +50,7 @@ Bug reports are welcome on GitHub at https://github.com/scrabill/burger_finder. 
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The app is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Code of Conduct
 
